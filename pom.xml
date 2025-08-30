@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>me.chrissw-r1</groupId>
+	<artifactId>central-upload-test</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>Maven Central Upload Test</name>
+
+	<properties>
+		<plugin.central-publish.version>0.8.0</plugin.central-publish.version>
+	</properties>
+
+	<scm>
+		<connection>scm:git:https://github.com/ChrissW-R1/central-upload-test.git</connection>
+	  <tag>central-upload-test-1.0.0</tag>
+  </scm>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.sonatype.central</groupId>
+					<artifactId>central-publishing-maven-plugin</artifactId>
+					<version>${plugin.central-publish.version}</version>
+					<extensions>true</extensions>
+					<configuration>
+						<publishingServerId>central</publishingServerId>
+						<autoPublish>true</autoPublish>
+						<waitUntil>published</waitUntil>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>cental-deploy</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<modules>
+		<module>sub-test</module>
+	</modules>
+</project>
