@@ -3,7 +3,7 @@
 
 	<groupId>me.chrissw-r1</groupId>
 	<artifactId>central-upload-test</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Maven Central Upload Test</name>
@@ -14,7 +14,7 @@
 
 	<scm>
 		<connection>scm:git:https://github.com/ChrissW-R1/central-upload-test.git</connection>
-		<tag>central-upload-test-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<build>
