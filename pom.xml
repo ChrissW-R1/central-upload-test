@@ -25,6 +25,17 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${plugin.release.version}</version>
+					<configuration>
+						<goals>deploy site-deploy</goals>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
+						<tagNameFormat>@{project.version}</tagNameFormat>
+						<scmCommentPrefix>[maven-release-plugin] [skip ci]</scmCommentPrefix>
+						<arguments>-Dexecutable -DfullBuild</arguments>
+					</configuration>
+				</plugin>
+				<plugin>
 					<groupId>org.sonatype.central</groupId>
 					<artifactId>central-publishing-maven-plugin</artifactId>
 					<version>${plugin.central-publish.version}</version>
