@@ -11,6 +11,11 @@
 	<name>Maven Central Upload Test</name>
 
 	<properties>
+		<project.site.baseDomain>urelion.world</project.site.baseDomain>
+		<project.site.urlPath>${project.groupId}/central-upload-test/${project.version}</project.site.urlPath>
+		<project.site.deploy.baseUrl>ftps://${project.site.baseDomain}</project.site.deploy.baseUrl>
+		<project.site.deploy.url>${project.site.deploy.baseUrl}/${project.site.urlPath}</project.site.deploy.url>
+
 		<plugin.release.version>3.1.1</plugin.release.version>
 		<plugin.central-publish.version>0.8.0</plugin.central-publish.version>
 	</properties>
@@ -21,6 +26,24 @@
 		<developerConnection>${project.scm.connection}</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+
+	<issueManagement>
+		<url>${project.scm.url}/issues</url>
+		<system>GitHub</system>
+	</issueManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>project-repo</id>
+			<name>Project Repository</name>
+			<url>https://maven.pkg.github.com/ChrissW-R1/central-upload-test</url>
+		</repository>
+		<site>
+			<id>project-site-repo</id>
+			<name>Project's Site - Repository</name>
+			<url>${project.site.deploy.url}</url>
+		</site>
+	</distributionManagement>
 
 	<build>
 		<pluginManagement>
