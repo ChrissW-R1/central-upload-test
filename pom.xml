@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>me.chrissw-r1</groupId>
@@ -16,6 +18,7 @@
 
 		<wagon.version>3.5.3</wagon.version>
 
+		<plugin.multi-module.version>1.1.6</plugin.multi-module.version>
 		<plugin.release.version>3.1.1</plugin.release.version>
 		<plugin.central-publish.version>0.8.0</plugin.central-publish.version>
 	</properties>
@@ -66,6 +69,15 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>me.chrissw-r1</groupId>
+					<artifactId>multi-module-maven-plugin</artifactId>
+					<version>${plugin.multi-module.version}</version>
+					<configuration>
+						<resolveUrl>true</resolveUrl>
+						<resolveRepositories>true</resolveRepositories>
+					</configuration>
+				</plugin>
+				<plugin>
 					<artifactId>maven-release-plugin</artifactId>
 					<version>${plugin.release.version}</version>
 					<configuration>
@@ -89,6 +101,33 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>me.chrissw-r1</groupId>
+				<artifactId>multi-module-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>multi-module-properties-default</id>
+						<goals>
+							<goal>module-root-properties</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>multi-module-properties-site</id>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>module-root-properties</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>list-modules</id>
+						<goals>
+							<goal>list-modules</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 
 	<profiles>
