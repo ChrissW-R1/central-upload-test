@@ -194,5 +194,7 @@
 
 	<modules>
 		<module>sub-test</module>
+		<module>sub-sub-project</module>
+		<module>sub-sub-project/sub-1-project/sub-1-test</module>
 	</modules>
 </project>
