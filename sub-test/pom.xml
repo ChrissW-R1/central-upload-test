@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>me.chrissw-r1</groupId>
 		<artifactId>central-upload-test</artifactId>
-		<version>1.0.8-SNAPSHOT</version>
+		<version>1.0.9-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>sub-test</artifactId>
