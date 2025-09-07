@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>me.chrissw-r1</groupId>
@@ -141,11 +143,11 @@
 	<profiles>
 		<profile>
 			<id>modify-deploy-pom</id>
-			<!--activation>
+			<activation>
 				<property>
 					<name>fullBuild</name>
 				</property>
-			</activation-->
+			</activation>
 			<build>
 				<plugins>
 					<plugin>
@@ -154,6 +156,7 @@
 						<executions>
 							<execution>
 								<id>add-defaults-default</id>
+								<phase>install</phase>
 								<goals>
 									<goal>add-defaults</goal>
 								</goals>
@@ -167,6 +170,7 @@
 							</execution>
 							<execution>
 								<id>copy-from-effective</id>
+								<phase>install</phase>
 								<goals>
 									<goal>copy-from-effective</goal>
 								</goals>
