@@ -5,7 +5,7 @@
 
 	<groupId>me.chrissw-r1</groupId>
 	<artifactId>central-upload-test</artifactId>
-	<version>1.0.7-SNAPSHOT</version>
+	<version>1.0.8-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Maven Central Upload Test</name>
