@@ -158,7 +158,7 @@
 									<goal>add-defaults</goal>
 								</goals>
 							</execution>
-							<execution>
+							<!--execution>
 								<id>add-defaults-site</id>
 								<phase>pre-site</phase>
 								<goals>
@@ -175,7 +175,7 @@
 									<copyEffectiveLicenses>true</copyEffectiveLicenses>
 									<copyEffectiveDevelopers>true</copyEffectiveDevelopers>
 								</configuration>
-							</execution>
+							</execution-->
 						</executions>
 					</plugin>
 				</plugins>
