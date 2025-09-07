@@ -152,7 +152,7 @@
 						<groupId>me.chrissw-r1</groupId>
 						<artifactId>deploy-pom-maven-plugin</artifactId>
 						<executions>
-							<!--execution>
+							<execution>
 								<id>add-defaults-default</id>
 								<goals>
 									<goal>add-defaults</goal>
@@ -164,7 +164,7 @@
 								<goals>
 									<goal>add-defaults</goal>
 								</goals>
-							</execution-->
+							</execution>
 							<execution>
 								<id>copy-from-effective</id>
 								<goals>
