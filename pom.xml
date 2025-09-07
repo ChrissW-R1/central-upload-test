@@ -143,11 +143,11 @@
 	<profiles>
 		<profile>
 			<id>modify-deploy-pom</id>
-			<activation>
+			<!--activation>
 				<property>
 					<name>fullBuild</name>
 				</property>
-			</activation>
+			</activation-->
 			<build>
 				<plugins>
 					<plugin>
