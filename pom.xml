@@ -156,7 +156,6 @@
 						<executions>
 							<execution>
 								<id>add-defaults-default</id>
-								<phase>install</phase>
 								<goals>
 									<goal>add-defaults</goal>
 								</goals>
@@ -170,7 +169,6 @@
 							</execution>
 							<execution>
 								<id>copy-from-effective</id>
-								<phase>install</phase>
 								<goals>
 									<goal>copy-from-effective</goal>
 								</goals>
